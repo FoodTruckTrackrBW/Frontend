@@ -3,13 +3,16 @@ import logo from './logo.svg';
 import './App.css';
 import { Switch, Route } from 'react-router-dom';
 import Login from './components/Login';
+
 import Register from './components/RegisterDiner';
+
 
 //State management Imports
 import DataContext from '../src/contexts/data';
 
 //Protected Route Imports
 import PrivateRoute from '../src/components/ProtectedRoute';
+
 
 import Home from './components/Home';
 
@@ -32,6 +35,7 @@ function App() {
         <PrivateRoute path="/DinerProfile" component={DinerProfile} />
         <PrivateRoute path="/OperatorProfile" component={OperatorProfile} />
         <Switch>
+
 
         </Switch>
       </DataContext.Provider>
