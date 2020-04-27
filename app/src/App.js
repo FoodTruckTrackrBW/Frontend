@@ -6,12 +6,14 @@ import Login from './components/Login';
 import Register from './components/Register';
 import Profile from './components/DinerProfile';
 
-
 //State management Imports
 import DataContext from '../src/contexts/data';
 
 //Protected Route Imports
 import PrivateRoute from '../src/components/ProtectedRoute';
+
+import Profile from './components/Profile';
+import Home from './components/Home';
 
 function App() {
   return (
@@ -22,7 +24,7 @@ function App() {
         <Route exact path="/" component={Login} />
         <PrivateRoute path="/Profile" component={Profile} />
         <Switch>
-
+    
         </Switch>
       </DataContext.Provider>
     </div>
