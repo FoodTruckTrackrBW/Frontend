@@ -1,7 +1,7 @@
 import React from "react";
 import axiosWithAuth from "../utils/axiosWithAuth";
 
-class Login extends React.Component {
+class RegisterOperator extends React.Component {
   constructor() {
     super();
     this.state = {
@@ -36,7 +36,7 @@ class Login extends React.Component {
   render(){
     return (
       <div>
-        <h1>Welcome to Login</h1>
+        <h1>REGISTER OPERATOR</h1>
         <form onSubmit={this.handleSubmit}>
           <input type="text" onChange={this.handleChanges} name="username" placeholder="username" required />
           <input type="password" onChange={this.handleChanges} name="password" placeholder="password" required  />
@@ -47,4 +47,4 @@ class Login extends React.Component {
     };
   }
 
-export default Login;
+export default RegisterOperator;
