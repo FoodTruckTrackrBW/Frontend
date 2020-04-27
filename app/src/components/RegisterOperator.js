@@ -1,6 +1,7 @@
+import React from "react";
 import axiosWithAuth from "../utils/axiosWithAuth";
 
-class Login extends React.Component {
+class RegisterOperator extends React.Component {
   constructor() {
     super();
     this.state = {
@@ -8,8 +9,7 @@ class Login extends React.Component {
         username: "",
         password: "",
         email: "",
-        user_type: diner,
-        favorite_cuisine_type: ""
+        user_type: "Operator"
       }
     }
   }
@@ -30,20 +30,19 @@ class Login extends React.Component {
     .then(res => {
       console.log('HELLO FROM HANDLESUBMIT', res)
       localStorage.setItem('token', res.data.payload);
-      this.props.history.push("/DinerProfile")
+      this.props.history.push("/OperatorProfile")
     })
     .catch(error => console.log(error));
   }
 
-  // make a post request to retrieve a token from the api
   render(){
     return (
       <div>
-        <h1>Register Page</h1>
+        <h1>REGISTER OPERATOR</h1>
         <form onSubmit={this.handleSubmit}>
           <input type="text" onChange={this.handleChanges} name="username" placeholder="username" required />
+          <input type="text" onChange={this.handleChanges} name="email" placeholder="email" required />
           <input type="password" onChange={this.handleChanges} name="password" placeholder="password" required  />
-          <input type="email" onChange={this.handleChanges} name="email" placeholder="email" required  />
           <input type="submit" />
         </form>
       </div>
@@ -51,4 +50,4 @@ class Login extends React.Component {
     };
   }
 
-export default Login; 
+export default RegisterOperator;

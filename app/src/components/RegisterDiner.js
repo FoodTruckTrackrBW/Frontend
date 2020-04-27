@@ -1,6 +1,8 @@
+import React from "react";
 import axiosWithAuth from "../utils/axiosWithAuth";
 
-class Login extends React.Component {
+
+class RegisterDiner extends React.Component {
   constructor() {
     super();
     this.state = {
@@ -8,7 +10,7 @@ class Login extends React.Component {
         username: "",
         password: "",
         email: "",
-        user_type: diner,
+        user_type: "Diner",
         favorite_cuisine_type: ""
       }
     }
@@ -26,7 +28,7 @@ class Login extends React.Component {
   handleSubmit = (e) => {
     e.preventDefault();
     axiosWithAuth()
-    .post('http://localhost:5000/api/login', this.state.credentials)
+    .post('https://food-truck-trackr-bw.herokuapp.com/api/auth/register', this.state.credentials)
     .then(res => {
       console.log('HELLO FROM HANDLESUBMIT', res)
       localStorage.setItem('token', res.data.payload);
@@ -35,15 +37,15 @@ class Login extends React.Component {
     .catch(error => console.log(error));
   }
 
-  // make a post request to retrieve a token from the api
   render(){
     return (
       <div>
-        <h1>Register Page</h1>
+        <h1>REGISTER DINER</h1>
         <form onSubmit={this.handleSubmit}>
           <input type="text" onChange={this.handleChanges} name="username" placeholder="username" required />
           <input type="password" onChange={this.handleChanges} name="password" placeholder="password" required  />
-          <input type="email" onChange={this.handleChanges} name="email" placeholder="email" required  />
+          <input type="text" onChange={this.handleChanges} name="email" placeholder="email" required />
+          <input type="text" onChange={this.handleChanges} name="favcuisinetype" placeholder="favorite cuisine type" required />
           <input type="submit" />
         </form>
       </div>
@@ -51,4 +53,4 @@ class Login extends React.Component {
     };
   }
 
-export default Login; 
+export default RegisterDiner;
