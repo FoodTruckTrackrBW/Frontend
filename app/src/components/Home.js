@@ -6,7 +6,8 @@ const Home = () => {
     return (
         <div>
             HOMEPAGE!
-            <button><Link to="/login">LOGIN</Link></button>
+            <button><Link to="/DinerLogin">Diner Login</Link></button>
+            <button><Link to="/OperatorLogin">Operator Login</Link></button>
             <button><Link to="/RegisterDiner">REGISTER As Diner</Link></button>
             <button><Link to="/RegisterOperator">REGISTER As Operator</Link></button>
         </div>

@@ -10,7 +10,7 @@ class RegisterDiner extends React.Component {
         username: "",
         password: "",
         email: "",
-        user_type: "Diner",
+        user_type: "diner",
         favorite_cuisine_type: ""
       }
     }
@@ -31,7 +31,9 @@ class RegisterDiner extends React.Component {
     .post('https://food-truck-trackr-bw.herokuapp.com/api/auth/register', this.state.credentials)
     .then(res => {
       console.log('SUCCESS POST', res)
-      // this.props.history.push("/DinerProfile")
+
+      if(this.state.credentials.user_type === "diner")
+      this.props.history.push("DinerProfile")
     })
     .catch(error => console.log(error));
   }
