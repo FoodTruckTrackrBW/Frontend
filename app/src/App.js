@@ -2,7 +2,7 @@ import React from 'react';
 import logo from './logo.svg';
 import './App.css';
 import { Switch, Route } from 'react-router-dom';
-import Login from './components/Login';
+import Login from './components/DinerLogin';
 
 import Register from './components/RegisterDiner';
 
@@ -20,6 +20,8 @@ import DinerProfile from '../src/components/DinerProfile';
 import OperatorProfile from '../src/components/OperatorProfile';
 import RegisterDiner from './components/RegisterDiner';
 import RegisterOperator from './components/RegisterOperator';
+import DinerLogin from './components/DinerLogin';
+import OperatorLogin from './components/OperatorLogin';
 
 function App() {
   return (
@@ -28,9 +30,11 @@ function App() {
         <header />
         <Route exact path="/Register" component={Register} />
         <Route exact path="/" component={Home} />
-        <Route exact path="/login" component={Login} />
+        <Route exact path="/Login" component={Login} />
         <Route exact path="/RegisterDiner" component={RegisterDiner} />
         <Route exact path="/RegisterOperator" component={RegisterOperator} />
+        <Route exact path="/DinerLogin" component={DinerLogin} />
+        <Route exact path="/OperatorLogin" component={OperatorLogin} />
         <PrivateRoute path="/DinerProfile" component={DinerProfile} />
         <PrivateRoute path="/OperatorProfile" component={OperatorProfile} />
         <Switch>
