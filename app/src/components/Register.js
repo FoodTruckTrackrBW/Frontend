@@ -1,9 +1,9 @@
 import React, { useState } from "react";
 import { Link } from 'react-router-dom';
-import DinerLogin from "./DinerLogin";
-import OperatorLogin from "./OperatorLogin";
+import DinerRegister from "./RegisterDiner";
+import OperatorRegister from "./RegisterOperator";
 
-function Home () {
+function Register () {
     const [ active, setActive ] = useState(true)
 
   
@@ -11,19 +11,19 @@ console.log(setActive, active)
     return (
         <div>
       <div className={active? "Active" : "notActive"}>
-           <DinerLogin />
+           <DinerRegister />
       </div>
       <div className={active? "notActive" : "Active"} >
-      <OperatorLogin/>
+      <OperatorRegister />
       </div>
       <div>
-      <button onClick={() => setActive(!active)}> {active? "Operator login" : "Diner Login"} </button>
-      <button>
-      <Link to='/Register'>Sign Up Here</Link>
-      </button>
+      <button onClick={() => setActive(!active)}> {active? "Operator Register" : "Diner Register"} </button>
       </div>
+      <button>
+      <Link to='/'>Login Here</Link>
+      </button>
    </div>
     )
 }
 
-export default Home;
+export default Register;
