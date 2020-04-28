@@ -1,3 +1,6 @@
+
+
+
 .App {
   text-align: center;
 }
@@ -36,7 +39,8 @@ h1 {
 }
 
 p {
-  color: #bf1650;
+  color: #FFFACD
+  ;
 }
 
 p::before {
@@ -57,20 +61,20 @@ label {
 
 button[type="submit"],
 input[type="submit"] {
-  background: #6B8E23;
-  color: white;
+  background: #FF8C00;
+  color: black;
   text-transform: uppercase;
   border: none;
   margin: 40px;
-  padding: 20px;
-  font-size: 16px;
+  padding: 17px;
+  font-size: 20px;
   font-weight: 100;
-  letter-spacing: 10px;
+  letter-spacing: 17px;
 }
 
 button[type="submit"]:hover,
 input[type="submit"]:hover {
-  background: #bf1650;
+  background: #FFA500;
 }
 
 button[type="submit"]:active,
