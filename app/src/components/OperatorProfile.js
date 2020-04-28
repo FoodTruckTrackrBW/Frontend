@@ -1,6 +1,5 @@
 import React from "react";
 import axiosWithAuth from "../utils/axiosWithAuth";
-import axios from 'axios';
 
 class OperatorProfile extends React.Component {
   constructor() {
@@ -37,7 +36,7 @@ class OperatorProfile extends React.Component {
   render(){
     return (
       <div>
-        <h1>REGISTER DINER</h1>
+        <h1>Register Truck</h1>
         <form onSubmit={this.handleSubmit}>
           <input type="text" onChange={this.handleChanges} name="truck_name" placeholder="truck_name" required />
           <input type="text" onChange={this.handleChanges} name="truck_img_url" placeholder="truck_img_url"/>
