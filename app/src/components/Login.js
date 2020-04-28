@@ -24,7 +24,7 @@ class Login extends React.Component {
   handleSubmit = (e) => {
     e.preventDefault();
     axiosWithAuth()
-    .post('http://localhost:5000/api/login', this.state.credentials)
+    .post('https://food-truck-trackr-bw.herokuapp.com/api/auth/login', this.state.credentials)
     .then(res => {
       console.log('HELLO FROM HANDLESUBMIT', res)
       localStorage.setItem('token', res.data.payload);
@@ -33,7 +33,6 @@ class Login extends React.Component {
     .catch(error => console.log(error));
   }
 
-  // make a post request to retrieve a token from the api
   render(){
     return (
       <div>
@@ -48,4 +47,4 @@ class Login extends React.Component {
     };
   }
 
-export default Login; 
+export default Login;

@@ -1,7 +1,6 @@
 import React from "react";
 import axiosWithAuth from "../utils/axiosWithAuth";
 
-
 class RegisterDiner extends React.Component {
   constructor() {
     super();

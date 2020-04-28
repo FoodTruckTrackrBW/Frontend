@@ -11,7 +11,3 @@ const axiosWithAuth = () => {
 }
 
 export default axiosWithAuth
-
-if(user_type === "diner"){
-
-}

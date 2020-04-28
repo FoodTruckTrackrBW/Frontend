@@ -13,7 +13,6 @@ import DataContext from '../src/contexts/data';
 //Protected Route Imports
 import PrivateRoute from '../src/components/ProtectedRoute';
 
-
 import Home from './components/Home';
 
 
