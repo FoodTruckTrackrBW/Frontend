@@ -6,8 +6,10 @@ class RegisterOperator extends React.Component {
     super();
     this.state = {
       credentials: {
-        username: '',
-        password: ''
+        username: "",
+        password: "",
+        email: "",
+        user_type: "Operator"
       }
     }
   }
@@ -28,7 +30,7 @@ class RegisterOperator extends React.Component {
     .then(res => {
       console.log('HELLO FROM HANDLESUBMIT', res)
       localStorage.setItem('token', res.data.payload);
-      this.props.history.push("/DinerProfile")
+      this.props.history.push("/OperatorProfile")
     })
     .catch(error => console.log(error));
   }
@@ -39,6 +41,7 @@ class RegisterOperator extends React.Component {
         <h1>REGISTER OPERATOR</h1>
         <form onSubmit={this.handleSubmit}>
           <input type="text" onChange={this.handleChanges} name="username" placeholder="username" required />
+          <input type="text" onChange={this.handleChanges} name="email" placeholder="email" required />
           <input type="password" onChange={this.handleChanges} name="password" placeholder="password" required  />
           <input type="submit" />
         </form>

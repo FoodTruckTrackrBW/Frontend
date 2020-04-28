@@ -24,7 +24,7 @@ class Login extends React.Component {
   handleSubmit = (e) => {
     e.preventDefault();
     axiosWithAuth()
-    .post('http://localhost:5000/api/login', this.state.credentials)
+    .post('https://food-truck-trackr-bw.herokuapp.com/api/auth/login', this.state.credentials)
     .then(res => {
       console.log('HELLO FROM HANDLESUBMIT', res)
       localStorage.setItem('token', res.data.payload);

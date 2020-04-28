@@ -3,7 +3,7 @@ import React from 'react';
 const OperatorProfile = () => {
     return (
         <div>
-            OPERATORPROFILE
+            OperatorPROFILE
         </div>
     )
 }
