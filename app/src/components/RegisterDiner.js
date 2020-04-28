@@ -10,7 +10,7 @@ class RegisterDiner extends React.Component {
         username: "",
         password: "",
         email: "",
-        user_type: "Diner",
+        user_type: "diner",
         favorite_cuisine_type: ""
       }
     }

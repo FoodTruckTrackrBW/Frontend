@@ -10,7 +10,7 @@ class RegisterOperator extends React.Component {
         username: "",
         password: "",
         email: "",
-        user_type: "Operator"
+        user_type: "operator"
       }
     }
   }

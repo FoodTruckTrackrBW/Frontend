@@ -1,51 +1,41 @@
-import React from "react";
+import React, { useContext } from "react";
 import axiosWithAuth from "../utils/axiosWithAuth";
 import axios from "axios";
+import userContext from '../contexts/UserContext';
+import { useHistory } from 'react-router-dom';
 
-class DinerLogin extends React.Component {
-  constructor() {
-    super();
-    this.state = {
-      credentials: {
-        username: '',
-        password: ''
-      }
-    }
+ const DinerLogin = () => {
+
+  const {user, setUser} = useContext(userContext)
+  const { push } = useHistory()
+
+  const handleChanges = (input) => {
+    setUser({...user, [input.target.name] : input.target.value})
+    console.log('User:',user)
   }
 
-  handleChanges = (e) => {
-    this.setState({
-      credentials: {
-        ...this.state.credentials,
-        [e.target.name]: e.target.value
-      }
-    })
-  }
-
-  handleSubmit = (e) => {
+  const handleSubmit = (e) => {
     e.preventDefault();
     axios
-    .post('https://food-truck-trackr-bw.herokuapp.com/api/auth/login', this.state.credentials)
+    .post('https://food-truck-trackr-bw.herokuapp.com/api/auth/login', user)
     .then(res => {
-      console.log('HELLO FROM HANDLESUBMIT', this.state.credentials)
+      console.log('HELLO FROM HANDLESUBMIT', user)
       localStorage.setItem('token', res.data.token);
-      this.props.history.push("/DinerProfile")
+      push("/DinerProfile")
     })
     .catch(error => console.log(error));
   }
 
-  render(){
     return (
       <div>
         <h1>DINER LOGIN</h1>
-        <form onSubmit={this.handleSubmit}>
-          <input type="text" onChange={this.handleChanges} name="username" placeholder="username" required />
-          <input type="password" onChange={this.handleChanges} name="password" placeholder="password" required  />
+        <form onSubmit={handleSubmit}>
+          <input type="text" onChange={handleChanges} name="username" placeholder="username" required />
+          <input type="password" onChange={handleChanges} name="password" placeholder="password" required  />
           <input type="submit" />
         </form>
       </div>
       );
     };
-  }
 
 export default DinerLogin;
