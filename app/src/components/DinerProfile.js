@@ -1,24 +1,44 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useContext } from 'react';
 import axiosWithAuth from '../utils/axiosWithAuth';
+import userContext from '../contexts/UserContext';
+import { useHistory } from 'react-router-dom';
+import TruckDinerData from '../contexts/TruckDinerData';
+import TruckList from './TruckList';
 
 const DinerProfile = () => {
-    const [trucks, setTrucks] = useState()
+    let {user, setUser} = useContext(userContext)
+    const [trucks, setTrucks] = useState([])
+
+    const { push } = useHistory()
 
     useEffect(() => {
         axiosWithAuth().get(`https://food-truck-trackr-bw.herokuapp.com/api/diner`)
         .then(response => {
-          setTrucks(response)
-          console.log(response)
+            setTrucks(response.data.trucks)
         })
         .catch(error => {
             console.log(error)
         })
-        console.log(trucks);
     },[])
+    console.log('TRUCKS', trucks);
+
+    const logout = () => {
+        
+        localStorage.removeItem('token')
+        setUser = {
+            username: '',
+            password: '',
+        }
+        console.log("LOGGED OUT!", user)
+        push('/login')
+    }
 
     return (
         <div>
-            TEST
+            <button onClick={logout}>LOGOUT</button>
+            <TruckDinerData.Provider value={{trucks}}>
+            <TruckList />
+            </TruckDinerData.Provider>
         </div>
     )
 }
