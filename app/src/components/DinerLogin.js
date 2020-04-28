@@ -1,17 +1,14 @@
 import React from "react";
 import axiosWithAuth from "../utils/axiosWithAuth";
-import axios from 'axios';
+import axios from "axios";
 
-class RegisterDiner extends React.Component {
+class DinerLogin extends React.Component {
   constructor() {
     super();
     this.state = {
       credentials: {
-        username: "",
-        password: "",
-        email: "",
-        user_type: "Diner",
-        favorite_cuisine_type: ""
+        username: '',
+        password: ''
       }
     }
   }
@@ -28,12 +25,11 @@ class RegisterDiner extends React.Component {
   handleSubmit = (e) => {
     e.preventDefault();
     axios
-    .post('https://food-truck-trackr-bw.herokuapp.com/api/auth/register', this.state.credentials)
+    .post('https://food-truck-trackr-bw.herokuapp.com/api/auth/login', this.state.credentials)
     .then(res => {
-      console.log('SUCCESS POST', res)
-
-      if(this.state.credentials.user_type === "diner")
-      this.props.history.push("DinerProfile")
+      console.log('HELLO FROM HANDLESUBMIT', this.state.credentials)
+      localStorage.setItem('token', res.data.token);
+      this.props.history.push("/DinerProfile")
     })
     .catch(error => console.log(error));
   }
@@ -41,12 +37,10 @@ class RegisterDiner extends React.Component {
   render(){
     return (
       <div>
-        <h1>REGISTER DINER</h1>
+        <h1>DINER LOGIN</h1>
         <form onSubmit={this.handleSubmit}>
           <input type="text" onChange={this.handleChanges} name="username" placeholder="username" required />
           <input type="password" onChange={this.handleChanges} name="password" placeholder="password" required  />
-          <input type="text" onChange={this.handleChanges} name="email" placeholder="email" required />
-          <input type="text" onChange={this.handleChanges} name="favorite_cuisine_type" placeholder="favorite cuisine type" required />
           <input type="submit" />
         </form>
       </div>
@@ -54,4 +48,4 @@ class RegisterDiner extends React.Component {
     };
   }
 
-export default RegisterDiner;
+export default DinerLogin;
