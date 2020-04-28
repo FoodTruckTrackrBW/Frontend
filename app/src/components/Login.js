@@ -1,5 +1,6 @@
 import React from "react";
 import axiosWithAuth from "../utils/axiosWithAuth";
+import axios from "axios";
 
 class Login extends React.Component {
   constructor() {
@@ -23,11 +24,11 @@ class Login extends React.Component {
 
   handleSubmit = (e) => {
     e.preventDefault();
-    axiosWithAuth()
+    axios
     .post('https://food-truck-trackr-bw.herokuapp.com/api/auth/login', this.state.credentials)
     .then(res => {
       console.log('HELLO FROM HANDLESUBMIT', res)
-      localStorage.setItem('token', res.data.payload);
+      localStorage.setItem('token', res.data.token);
       this.props.history.push("/DinerProfile")
     })
     .catch(error => console.log(error));

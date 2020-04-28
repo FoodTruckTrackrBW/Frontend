@@ -1,5 +1,6 @@
 import React from "react";
 import axiosWithAuth from "../utils/axiosWithAuth";
+import axios from 'axios';
 
 class RegisterDiner extends React.Component {
   constructor() {
@@ -26,12 +27,11 @@ class RegisterDiner extends React.Component {
 
   handleSubmit = (e) => {
     e.preventDefault();
-    axiosWithAuth()
+    axios
     .post('https://food-truck-trackr-bw.herokuapp.com/api/auth/register', this.state.credentials)
     .then(res => {
-      console.log('HELLO FROM HANDLESUBMIT', res)
-      localStorage.setItem('token', res.data.payload);
-      this.props.history.push("/DinerProfile")
+      console.log('SUCCESS POST', res)
+      // this.props.history.push("/DinerProfile")
     })
     .catch(error => console.log(error));
   }
@@ -44,7 +44,7 @@ class RegisterDiner extends React.Component {
           <input type="text" onChange={this.handleChanges} name="username" placeholder="username" required />
           <input type="password" onChange={this.handleChanges} name="password" placeholder="password" required  />
           <input type="text" onChange={this.handleChanges} name="email" placeholder="email" required />
-          <input type="text" onChange={this.handleChanges} name="favcuisinetype" placeholder="favorite cuisine type" required />
+          <input type="text" onChange={this.handleChanges} name="favorite_cuisine_type" placeholder="favorite cuisine type" required />
           <input type="submit" />
         </form>
       </div>
