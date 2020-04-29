@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 // import logo from './logo.svg';
 import './App.css';
-import { Switch, Route } from 'react-router-dom';
+import { Switch, Route, useParams } from 'react-router-dom';
 import Login from './components/Login';
 
 import Register from './components/Register';
@@ -19,6 +19,8 @@ import truckContext from './contexts/TruckContext';
 import userContext from './contexts/UserContext';
 import TruckList from './components/TruckList';
 import OwnedTruckContext from '../src/contexts/OwnedTruckContext';
+import useLocalStorage from './utils/useLocalStorage';
+import TruckDetails from './components/Menu';
 
 function App() {
 
@@ -51,8 +53,8 @@ function App() {
           <Route exact path="/Register" component={Register} />
           <PrivateRoute path="/DinerProfile" component={DinerProfile} />
           <PrivateRoute path="/OperatorProfile" component={OperatorProfile} />
+          <PrivateRoute path="/TruckDetails/:truckid" component={TruckDetails} />
           <Switch>
-
 
           </Switch>
           </OwnedTruckContext.Provider>
