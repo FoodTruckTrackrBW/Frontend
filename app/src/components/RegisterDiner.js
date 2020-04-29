@@ -31,9 +31,9 @@ class RegisterDiner extends React.Component {
     .post('https://food-truck-trackr-bw.herokuapp.com/api/auth/register', this.state.credentials)
     .then(res => {
       console.log('SUCCESS POST', res)
-
+      console.log(this.state.credentials)
       if(this.state.credentials.user_type === "diner")
-      this.props.history.push("DinerProfile")
+      this.props.history.push("/DinerProfile")
     })
     .catch(error => console.log(error));
   }
