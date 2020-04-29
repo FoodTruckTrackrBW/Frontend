@@ -4,7 +4,7 @@ import { Link, useParams } from 'react-router-dom'
 
 
 
-const TruckDetails = () => {
+const Menu = () => {
     const [menu, setMenu] = useState([{}]);
     useEffect(() => {
     axiosWithAuth()
@@ -15,17 +15,6 @@ const TruckDetails = () => {
     })},[])	
         let {truckid} = useParams()
 
-    // const TruckDetails = props => {
-    //     const [truckCard, setTruckCard] = useState([]);
-    //     const getTruckCard = () =>{
-    //           axiosWithAuth().get('/')
-    //           .then(res => {
-    //               setTruckList(res.data)
-    //                console.log(res.data)
-    //               })
-    //           .catch(err => console.log(err))
-    //       }
-    
     return (
         <div className="truck-details">
             {menu.map(item => { return (
@@ -36,4 +25,4 @@ const TruckDetails = () => {
     );
 }
 
-export default TruckDetails;
+export default Menu;
