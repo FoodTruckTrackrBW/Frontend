@@ -8,7 +8,7 @@ function Home () {
 
 //<img src="./src/copmponents/assests/FoodTruckTrackr-logos_transparent.png" />
   
-console.log(setActive, active)
+// console.log(setActive, active)
     return (
         <div>
       <div className={active? "Active" : "notActive"}>

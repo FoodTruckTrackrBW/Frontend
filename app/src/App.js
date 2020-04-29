@@ -20,7 +20,8 @@ import userContext from './contexts/UserContext';
 import TruckList from './components/TruckList';
 import OwnedTruckContext from '../src/contexts/OwnedTruckContext';
 import useLocalStorage from './utils/useLocalStorage';
-import TruckDetails from './components/Menu';
+import Menu from './components/Menu';
+
 
 function App() {
 
@@ -34,6 +35,7 @@ function App() {
 
   // initial state of truck passed through every part of the site.
   const [trucks, setTrucks] = useState([{
+      id: "",
       truck_name: "",
       truck_img_url: "", // Optional
       cuisine_type: "",
@@ -53,7 +55,7 @@ function App() {
           <Route exact path="/Register" component={Register} />
           <PrivateRoute path="/DinerProfile" component={DinerProfile} />
           <PrivateRoute path="/OperatorProfile" component={OperatorProfile} />
-          <PrivateRoute path="/TruckDetails/:truckid" component={TruckDetails} />
+          <PrivateRoute path="/TruckDetails/:truckid" component={Menu} />
           <Switch>
 
           </Switch>
