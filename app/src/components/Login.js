@@ -6,6 +6,7 @@ import OperatorLogin from "./OperatorLogin";
 function Home () {
     const [ active, setActive ] = useState(true)
 
+//<img src="./src/copmponents/assests/FoodTruckTrackr-logos_transparent.png" />
   
 console.log(setActive, active)
     return (
