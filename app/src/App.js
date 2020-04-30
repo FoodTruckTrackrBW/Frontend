@@ -26,6 +26,7 @@ import UpdateTruck from './components/UpdateTruck';
 import MenuOwned from './components/MenuOwned';
 import ItemContext from './contexts/ItemContext';
 import UpdateItem from './components/UpdateItem';
+import MenuContext from './contexts/MenuContext';
 
 
 function App() {
@@ -66,23 +67,32 @@ function App() {
     item_price: "",
 }])
 
+const [menu, setMenu] = useState([{
+  item_name: "",
+  item_description: "",
+  item_photo_url: "", // Optional?
+  item_price: "",
+}])
+
   return (
     <div className="App">
       <userContext.Provider value={{user, setUser}}>
         <truckContext.Provider value={{trucks, setTrucks, truckToUpdate, setTruckToUpdate}}>
           <OwnedTruckContext.Provider value={{owned, setOwned}}>
             <ItemContext.Provider value={{itemToUpdate, setItemToUpdate}}>
-              <header />
-              <Route exact path="/" component={Login} />
-              <Route exact path="/Register" component={Register} />
-              <PrivateRoute path="/DinerProfile" component={DinerProfile} />
-              <PrivateRoute path="/OperatorProfile" component={OperatorProfile} />
-              <PrivateRoute path="/TruckDetails/:truckid" component={Menu} />
-              <PrivateRoute path="/TruckDetailsTest/:truckid" component={MenuOwned} />
-              <PrivateRoute path="/UpdateTruck/:truckid" component={UpdateTruck} />
-              <PrivateRoute path="/UpdateItem/:itemid" component={UpdateItem} />
-              <Switch>
-              </Switch>
+              <MenuContext.Provider value={{menu, setMenu}}>
+                <header />
+                <Route exact path="/" component={Login} />
+                <Route exact path="/Register" component={Register} />
+                <PrivateRoute path="/DinerProfile" component={DinerProfile} />
+                <PrivateRoute path="/OperatorProfile" component={OperatorProfile} />
+                <PrivateRoute path="/TruckDetails/:truckid" component={Menu} />
+                <PrivateRoute path="/TruckDetailsOwnedMenu/:truckid" component={MenuOwned} />
+                <PrivateRoute path="/UpdateTruck/:truckid" component={UpdateTruck} />
+                <PrivateRoute path="/UpdateItem/:itemid" component={UpdateItem} />
+                <Switch>
+                </Switch>
+              </MenuContext.Provider>
             </ItemContext.Provider>
           </OwnedTruckContext.Provider>
         </truckContext.Provider>

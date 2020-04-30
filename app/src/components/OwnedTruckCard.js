@@ -21,7 +21,7 @@ const OwnedTruckCard = (props) => {
       }
 
       const toMenu = () => {
-        push(`/TruckDetailsTest/${props.truck.id}`)
+        push(`/TruckDetailsOwnedMenu/${props.truck.id}`)
       }
 
     return (

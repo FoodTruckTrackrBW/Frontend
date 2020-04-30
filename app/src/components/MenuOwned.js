@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import axiosWithAuth from "../utils/axiosWithAuth";
 import { Link, useParams } from 'react-router-dom';
 import ItemCard from '../components/ItemCard';
+import AddItem from "./AddItem";
 
 
 
@@ -14,10 +15,13 @@ const MenuOwned = () => {
         setMenu(res.data.items) 
     })},[])	
         let {truckid} = useParams()
+        console.log('MENU!', menu)  
 
-        console.log('MENU!', menu)
     return (
+
         <div className="truck-details">
+            <AddItem />
+
             {menu.map(item => { return (
                 <ItemCard food={item}/>
             )})}
