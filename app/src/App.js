@@ -32,7 +32,7 @@ function App() {
 
   
   // initial state of user passed through every part of the site.
-  const [user, setUser] = useState({
+  const [user, setUser] = useLocalStorage({
     username: '',
     password: '',
     favorite_cuisine_type: ''
