@@ -1,6 +1,6 @@
 import React from "react";
-import axiosWithAuth from "../utils/axiosWithAuth";
 import axios from 'axios';
+import { Redirect } from "react-router-dom";
 
 class RegisterOperator extends React.Component {
   constructor() {
@@ -30,7 +30,7 @@ class RegisterOperator extends React.Component {
     .post('https://food-truck-trackr-bw.herokuapp.com/api/auth/register', this.state.credentials)
     .then(res => {
       console.log('SUCCESS POST', res)
-      this.props.history.push("/OperatorProfile")
+      this.props.history.push("/")
     })
     .catch(error => console.log(error));
   }
