@@ -143,8 +143,8 @@ margin-top: 60px;
 }
 
 .TruckCard {
-  background-color: rgba(246, 195, 54, 0.897);
-  color: rgb(0, 0, 0);
+  background-color: rgba(36, 35, 34, 0.897);
+  color: rgb(255, 255, 255);
   padding: 1%;
   max-width: 50%;
   margin: 1% auto;
@@ -152,6 +152,15 @@ margin-top: 60px;
 }
 
 .TruckCardInfo {
-  color: black;
+  color: rgb(255, 255, 255);
   font-weight: bold;
+}
+
+.photo {
+  max-width: 100%;
+  border-radius: 50px;
+}
+
+body {
+  background-color: #204963;
 }
