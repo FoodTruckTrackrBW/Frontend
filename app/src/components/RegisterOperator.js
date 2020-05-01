@@ -2,6 +2,8 @@ import React from "react";
 import axios from 'axios';
 import { Redirect } from "react-router-dom";
 
+
+// form validation 
 class RegisterOperator extends React.Component {
   constructor() {
     super();
@@ -35,6 +37,7 @@ class RegisterOperator extends React.Component {
     .catch(error => console.log(error));
   }
 
+  // adds certain requirments too fill out the following: username, email, and passwordho
   render(){
     return (
       <div>

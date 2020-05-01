@@ -13,7 +13,7 @@ const TruckCard = (props) => {
     const menuRedirect = () => {
         push(`/TruckDetails/${truckid}`)
     }
-
+    // Display each card
     return (
         <div className="TruckCard">
             <h1 className="TruckCardInfo">Truck Name: {props.truck.truck_name}</h1>
