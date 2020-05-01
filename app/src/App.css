@@ -2,7 +2,10 @@
 
 
 .App {
+  font-family: "Montserrat", sans-serif;
   text-align: center;
+  display: flex;
+
 }
 
 ul {
@@ -163,4 +166,51 @@ margin-top: 60px;
 
 body {
   background-color: #204963;
+}
+
+li {
+  text-decoration: none;
+}
+.spacer {
+  height: 100%;
+}
+
+.bubble-wrap {
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+}
+
+.colors-wrap {
+  height: 100%;
+  width: 300px;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+
+
+}
+
+.delete {
+  color: rgb(216, 87, 87);
+}
+
+.color-box {
+  height: 16px;
+  width: 16px;
+  border: 1px lightgray solid;
+  margin-right: 36px;
+}
+
+form {
+  margin-top: 60px;
+  display: flex;
+  flex-direction: column;
+
+  
+}
+
+.button-row {
+  display: flex;
+  justify-content: space-between;
+  padding: 0 36px 0 41px;
+
 }

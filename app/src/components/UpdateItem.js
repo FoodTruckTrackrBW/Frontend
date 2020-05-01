@@ -27,7 +27,7 @@ const UpdateTruck = () => {
     })
     .catch(error => console.log(error));
     }
-
+// updates the card each time 
     return (
         <div>
 
