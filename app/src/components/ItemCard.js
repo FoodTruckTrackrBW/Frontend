@@ -21,7 +21,7 @@ const ItemCard = (props) => {
         <div className="TruckCard">
             <h1 className="TruckCardInfo">item Name: {props.food.item_name}</h1>
             <p className="TruckCardInfo">item description: {props.food.item_description}</p>
-            <p className="TruckCardInfo">{props.food.item_photo_url}</p>
+            <p className="TruckCardInfo">{<img src={props.truck.truck_img_url} className="photo"></img>}</p>
             <p className="TruckCardInfo">item price: {props.food.item_price}</p>
             <button onClick={editItem}>Edit Item</button>
         </div>

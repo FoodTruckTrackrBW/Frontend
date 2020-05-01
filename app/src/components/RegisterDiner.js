@@ -42,7 +42,7 @@ class RegisterDiner extends React.Component {
       <div>
         <h1>REGISTER DINER</h1>
         <form onSubmit={this.handleSubmit}>
-          <input type="text" onChange={this.handleChanges} name="username" placeholder="username" required />
+          <input type="text" onChange={this.handleChanges} name="username" placeholder="username" minLength="5" required />
           <input type="password" onChange={this.handleChanges} name="password" placeholder="password" required  />
           <input type="text" onChange={this.handleChanges} name="email" placeholder="email" required />
           <input type="text" onChange={this.handleChanges} name="favorite_cuisine_type" placeholder="favorite cuisine type" required />
