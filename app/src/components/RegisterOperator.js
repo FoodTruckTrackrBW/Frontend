@@ -40,9 +40,9 @@ class RegisterOperator extends React.Component {
       <div>
         <h1>REGISTER OPERATOR</h1>
         <form onSubmit={this.handleSubmit}>
-          <input type="text" onChange={this.handleChanges} name="username" placeholder="username" required />
-          <input type="text" onChange={this.handleChanges} name="email" placeholder="email" required />
-          <input type="password" onChange={this.handleChanges} name="password" placeholder="password" required  />
+          <input type="text" onChange={this.handleChanges} name="username" placeholder="username" minLength="6" maxLength="11" required />
+          <input type="text" onChange={this.handleChanges} name="email" placeholder="email" minLength="20" maxLength="30" required />
+          <input type="password" onChange={this.handleChanges} name="password" placeholder="password" minLength="7" maxLength="12" required  />
           <input type="submit" />
         </form>
       </div>
