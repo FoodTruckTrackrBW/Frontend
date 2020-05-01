@@ -3,6 +3,8 @@ import axiosWithAuth from "../utils/axiosWithAuth";
 import { Link, useParams } from 'react-router-dom'
 import DinerItemCard from './DinerItemCard';
 
+// Student's code was organized at the component level, proper usage of state and props are demonstrated throughout the project, the UI is composed of small reusable components, proper usage of useState and useEffect hooks are clearly incorporated and correctly implemented.  Student used Array methods to dynamically render HTML elements.
+
 
 // Passing thru ids for each truck that is selected in a list
 const Menu = () => {

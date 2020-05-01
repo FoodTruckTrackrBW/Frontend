@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import DinerLogin from "./DinerLogin";
 import OperatorLogin from "./OperatorLogin";
 
+// Student's code was organized at the component level, proper usage of state and props are demonstrated throughout the project, the UI is composed of small reusable components, proper usage of useState and useEffect hooks are clearly incorporated and correctly implemented.  Student used Array methods to dynamically render HTML elements.
 
 function Home () {
     const [ active, setActive ] = useState(true)

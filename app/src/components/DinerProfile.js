@@ -5,6 +5,8 @@ import { useHistory } from 'react-router-dom';
 import truckContext from '../contexts/TruckContext';
 import TruckList from './TruckList';
 
+// Student's code was organized at the component level, proper usage of state and props are demonstrated throughout the project, the UI is composed of small reusable components, proper usage of useState and useEffect hooks are clearly incorporated and correctly implemented.  Student used Array methods to dynamically render HTML elements.
+
 const DinerProfile = () => {
     let {user, setUser} = useContext(userContext)
     const {trucks, setTrucks} = useContext(truckContext)

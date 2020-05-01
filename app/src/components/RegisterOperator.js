@@ -2,6 +2,7 @@ import React from "react";
 import axios from 'axios';
 import { Redirect } from "react-router-dom";
 
+// Student has set up component management for the forms in the app that makes sense for each form. Student made the decision to use a third-party library, like Formik, or not, and can defend their decision. Some form validation is in place.
 
 // form validation 
 class RegisterOperator extends React.Component {

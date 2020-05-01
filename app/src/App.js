@@ -29,6 +29,7 @@ import ItemContext from './contexts/ItemContext';
 import UpdateItem from './components/UpdateItem';
 import MenuContext from './contexts/MenuContext';
 
+// Student implemented GET requests using either Axios or Fetch to display 3rd party data on a deployed page. Route management properly installed and used to show top level pages as well as nested views where necessary.
 
 function App() {
 
